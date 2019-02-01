@@ -18,7 +18,6 @@ import static com.ethan.protocol.command.Command.MESSAGE_REQUEST;
 import static com.ethan.protocol.command.Command.MESSAGE_RESPONSE;
 
 /**
- * @author tmpil9
  * @version 1.0
  * @date 22/01/2019
  */

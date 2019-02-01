@@ -1,18 +1,3 @@
-/*
- * System Name         : GEBNexGen
- * Program Id          : netty-chat
- * Author              : tmpil9
- * Date                : 16/01/2019
- * Copyright (c) United Overseas Bank Limited Co.
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of
- * United Overseas Bank Limited Co. ("Confidential Information").  You shall not
- * disclose such Confidential Information and shall use it only in accordance
- * with the terms of the license agreement you entered into with
- * United Overseas Bank Limited Co.
- */
-
 package com.ethan.client;
 
 import com.ethan.client.handle.ClientLoginHandler;
@@ -36,7 +21,6 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author tmpil9
  * @version 1.0
  * @date 16/01/2019
  */
@@ -68,7 +52,6 @@ public class NettyClient {
     /**
      *
      * @description: try to reconnect with time, 1, 2, 4, 8, 16...
-     * @author tmpil9
      * @date 18/01/2019 11:05 AM
      */
     private static void connect(Bootstrap bootstrap, String host, int port, int retry) {

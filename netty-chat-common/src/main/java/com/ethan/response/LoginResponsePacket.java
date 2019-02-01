@@ -7,7 +7,6 @@ import lombok.ToString;
 import static com.ethan.protocol.command.Command.LOGIN_RESPONSE;
 
 /**
- * @author tmpil9
  * @version 1.0
  * @date 22/01/2019
  */

@@ -16,7 +16,6 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * @author tmpil9
  * @version 1.0
  * @date 22/01/2019
  */

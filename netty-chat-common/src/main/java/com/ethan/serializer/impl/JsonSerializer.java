@@ -5,7 +5,6 @@ import com.ethan.serializer.Serializer;
 import com.ethan.serializer.SerializerAlgorithm;
 
 /**
- * @author tmpil9
  * @version 1.0
  * @date 22/01/2019
  */

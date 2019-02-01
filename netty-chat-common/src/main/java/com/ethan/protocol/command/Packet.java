@@ -3,7 +3,6 @@ package com.ethan.protocol.command;
 import lombok.Data;
 
 /**
- * @author tmpil9
  * @version 1.0
  * @date 22/01/2019
  */

@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * @author tmpil9
  * @version 1.0
  * @date 22/01/2019
  */
