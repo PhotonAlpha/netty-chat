@@ -3,16 +3,10 @@ package com.ethan.serializer;
 
 import com.ethan.serializer.impl.JsonSerializer;
 
-/**
- * @author tmpil9
- * @version 1.0
- * @date 22/01/2019
- */
 public interface Serializer {
     /**
      * JSON serializer
      *
-     * @author tmpil9
      * @date 22/01/2019 11:53 AM
      */
     byte JSON_SERIALIZER = 1;
@@ -21,7 +15,6 @@ public interface Serializer {
     /**
      *  Serializer Algorithm
      * @return {byte}
-     * @author tmpil9
      * @date 22/01/2019 3:42 PM
      */
     byte getSerializerAlgorithm();

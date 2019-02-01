@@ -22,11 +22,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import java.nio.charset.Charset;
 import java.util.Date;
 
-/**
- * @author tmpil9
- * @version 1.0
- * @date 18/01/2019
- */
+
 public class FirstServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

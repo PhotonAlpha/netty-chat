@@ -16,8 +16,14 @@
 package com.ethan.server;
 
 import com.ethan.server.handle.InBoundHandlerA;
+import com.ethan.server.handle.InBoundHandlerB;
+import com.ethan.server.handle.InBoundHandlerC;
+import com.ethan.server.handle.OutBoundHandlerA;
+import com.ethan.server.handle.OutBoundHandlerB;
+import com.ethan.server.handle.OutBoundHandlerC;
 import com.ethan.server.handle.ServerLoginHandler;
 import com.ethan.server.proxy.InboundProxyGenerator;
+import com.ethan.server.proxy.OutboundProxyGenerator;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -27,11 +33,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 
-/**
- * @author tmpil9
- * @version 1.0
- * @date 15/01/2019
- */
+
 public class NettyServer {
     public static void main(String[] args) {
         NioEventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -61,16 +63,16 @@ public class NettyServer {
                         // channel.pipeline().addLast(new InBoundHandlerStaticProxy(new InBoundHandlerB()));
                         // channel.pipeline().addLast(new InBoundHandlerStaticProxy(new InBoundHandlerC()));
                         channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerA()));
-                        // channel.pipeline().addLast(DynamicGenerator.newInstance(new InBoundHandlerB()));
-                        // channel.pipeline().addLast(DynamicGenerator.newInstance(new InBoundHandlerC()));
+                        channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerB()));
+                        channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerC()));
                         channel.pipeline().addLast(new ServerLoginHandler());
 
                         // channel.pipeline().addLast(new OutBoundHandlerStaticProxy(new OutBoundHandlerA()));
                         // channel.pipeline().addLast(new OutBoundHandlerStaticProxy(new OutBoundHandlerB()));
                         // channel.pipeline().addLast(new OutBoundHandlerStaticProxy(new OutBoundHandlerC()));
-                        // channel.pipeline().addLast(DynamicGenerator.newInstance(new OutBoundHandlerA()));
-                        // channel.pipeline().addLast(DynamicGenerator.newInstance(new OutBoundHandlerB()));
-                        // channel.pipeline().addLast(DynamicGenerator.newInstance(new OutBoundHandlerC()));
+                        channel.pipeline().addLast(OutboundProxyGenerator.newInstance(new OutBoundHandlerA()));
+                        channel.pipeline().addLast(new OutBoundHandlerB());
+                        channel.pipeline().addLast(new OutBoundHandlerC());
                     }
                 });
         bind(serverBootstrap, 8080);

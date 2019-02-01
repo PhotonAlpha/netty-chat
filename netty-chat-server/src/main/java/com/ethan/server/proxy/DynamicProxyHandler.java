@@ -24,9 +24,9 @@ public class DynamicProxyHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println(method.getName() + "-start->" + System.currentTimeMillis());
+        System.out.println(target.getClass().getSimpleName() + "-" + method.getName() + "-start->" + System.currentTimeMillis());
         Object result = method.invoke(target, args);
-        System.out.println(method.getName() + "-end->" + System.currentTimeMillis());
+        System.out.println(target.getClass().getSimpleName() + "-" + method.getName() + "-end->" + System.currentTimeMillis());
         return result;
     }
 }

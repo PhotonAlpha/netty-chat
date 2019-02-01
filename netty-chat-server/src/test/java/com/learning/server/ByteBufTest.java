@@ -23,11 +23,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * @author tmpil9
- * @version 1.0
- * @date 18/01/2019
- */
 public class ByteBufTest {
     public static void main1() {
         ByteBuf buffer = ByteBufAllocator.DEFAULT.buffer(9, 100);

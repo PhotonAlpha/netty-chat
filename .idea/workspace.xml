@@ -1,54 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d05b421b-3c79-452f-907e-044fdee950e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/InboundProxyGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/OutBoundHandlerStaticProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/netty.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0ad7d990f363ae3aae1491649e0d51d39ab5e579" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/159dfce452d371e6b07bf8d983d36f2648646465" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/18e0a8239da6cb7ee62dde97af12f1de397496a4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37bedccf997d99851b19145b8d9ca746dc5394e2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/4050e793e5daee4fc44f07b158edbf2dd005339f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/416044229603f8fd9def63bb7c892e134fc8b264" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/426959da0873c5d6c5cb0bb09b24669e1bb52782" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/4568985b786c616ee0aff6738fd9d3fe92a924d3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45b906aa889f37569b85a0e6a1481620d25ff3b2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4e0ae7fe5d9129575fc8c35f3d21cd19f3a29d34" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53d86505609fe9b613ff03632186dfa343804e7c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/5/758de1dac8d814832af2fe383ec4513293c46042" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7f72946047c328fbd4ccbffb5a5bf11095e0867a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/9/8990f43317b374fc006f8bfb11b622c7337ea9fa" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c634d048bb227007fdef51640c828665cf8488c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9dadffbf836a4a5692fe9a620929201880e9283e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a25cbcf4ec9ad02459744411028eb4490fc71e73" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a301d5218b6e807140f96a2856a63c2b8368ea29" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/1/b134543c3b5a9da7b6d8bc974a120edc56137893" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b405540d70c3272a94c577a4947ea75db78acfa2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b5f9943c6aabf267ee3a88efeaf3f2b6739968a6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/d/bd95426aa6e5c64baee354069ea4de9883152801" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c3fae70267fdd20ad55be321e49347ec676ae9bd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c5435736f040b9b4888dc236425ec11a3e0127e8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e4bbfda402a0516caaa0eb698268f05be6d5346b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e630e996a98b2b2f0d8cfd89cbebeae8f423bd24" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/eae5311d990d15047d28a60b99506b38b2304bba" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+    <list default="true" id="d05b421b-3c79-452f-907e-044fdee950e0" name="Default Changelist" comment="update">
+      <change afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/codec/PacketDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/codec/PacketEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/OutboundProxyGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netty-chat-client/netty-chat-client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/netty-chat-common/netty-chat-common.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/netty-chat-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netty-chat-server/netty-chat-server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-client/src/main/java/com/ethan/client/handle/ClientLoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-client/src/main/java/com/ethan/client/handle/ClientLoginHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/protocol/command/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/protocol/command/Packet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/protocol/command/PacketCodeC.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/protocol/command/PacketCodeC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/request/LoginRequestPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/request/LoginRequestPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/response/LoginResponsePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/response/LoginResponsePacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/Serializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/SerializerAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/SerializerAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/impl/JsonSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/impl/JsonSerializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/utils/LocalDateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/utils/LocalDateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/NettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/OutBoundHandlerA.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/OutBoundHandlerA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/FirstServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/FirstServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/ServerLoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/ServerLoginHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-chat-server/src/test/java/com/learning/server/ByteBufTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/src/test/java/com/learning/server/ByteBufTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-chat-server/target/classes/com/ethan/server/NettyServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/target/classes/com/ethan/server/NettyServer$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-chat-server/target/classes/com/ethan/server/NettyServer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/target/classes/com/ethan/server/NettyServer$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-chat-server/target/classes/com/ethan/server/NettyServer$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/target/classes/com/ethan/server/NettyServer$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netty-chat-server/target/classes/com/ethan/server/NettyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/target/classes/com/ethan/server/NettyServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netty-chat-server/target/test-classes/com/learning/server/ByteBufTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/netty-chat-server/target/test-classes/com/learning/server/ByteBufTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/netty-chat-common/target/" />
     <ignored path="$PROJECT_DIR$/netty-chat-server/target/" />
@@ -65,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/NettyServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
+            <state relative-caret-position="456">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2031#2322#0" expanded="true" />
@@ -79,19 +54,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/request/LoginRequestPacket.java">
+        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/codec/PacketDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="320">
+              <caret line="29" column="26" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/codec/PacketEncoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/protocol/command/PacketCodeC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/InboundProxyGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="34" column="41" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="41" />
+            <state relative-caret-position="207">
+              <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,49 +99,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/lang/reflect/Constructor.java">
+        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/OutboundProxyGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="405" column="13" selection-start-line="405" selection-start-column="13" selection-end-line="405" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/lang/reflect/InvocationHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/OutBoundHandlerStaticProxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="38" column="70" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/OutBoundHandlerA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/InBoundHandlerStaticProxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+            <state relative-caret-position="33">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,70 +113,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxyHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="312">
+              <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#418#419#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/test/java/com/learning/server/ByteBufTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/time/format/DateTimeFormatter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="1371" column="4" selection-start-line="1371" selection-start-column="4" selection-end-line="1371" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/InBoundHandlerC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/OutBoundHandlerC.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-common/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/InBoundHandlerA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#583#584#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -237,6 +139,7 @@
       <find>generate</find>
       <find>channelRead</find>
       <find>channelRead(</find>
+      <find>* @author tmpil9</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -255,11 +158,25 @@
         <option value="$PROJECT_DIR$/netty-chat-common/pom.xml" />
         <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/MyMethodInterceptor.java" />
         <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxy.java" />
-        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxyHandler.java" />
-        <option value="$PROJECT_DIR$/netty-chat-server/src/test/java/com/learning/server/ByteBufTest.java" />
         <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicGenerator.java" />
-        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/NettyServer.java" />
         <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/InboundProxyGenerator.java" />
+        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/OutboundProxyGenerator.java" />
+        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxyHandler.java" />
+        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/codec/PacketDecoder.java" />
+        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/codec/PacketEncoder.java" />
+        <option value="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/protocol/command/Packet.java" />
+        <option value="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/request/LoginRequestPacket.java" />
+        <option value="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/impl/JsonSerializer.java" />
+        <option value="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/protocol/command/PacketCodeC.java" />
+        <option value="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/response/LoginResponsePacket.java" />
+        <option value="$PROJECT_DIR$/netty-chat-client/src/main/java/com/ethan/client/handle/ClientLoginHandler.java" />
+        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/ServerLoginHandler.java" />
+        <option value="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/utils/LocalDateUtil.java" />
+        <option value="$PROJECT_DIR$/netty-chat-server/src/test/java/com/learning/server/ByteBufTest.java" />
+        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/handle/FirstServerHandler.java" />
+        <option value="$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/NettyServer.java" />
+        <option value="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/Serializer.java" />
+        <option value="$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/serializer/SerializerAlgorithm.java" />
       </list>
     </option>
   </component>
@@ -322,83 +239,32 @@
               <item name="nettychat" type="462c0819:PsiDirectoryNode" />
               <item name="netty-chat-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="handle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="proxy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
-              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
               <item name="nettychat" type="462c0819:PsiDirectoryNode" />
               <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
+              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
+              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-chat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nettychat" type="462c0819:PsiDirectoryNode" />
+              <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -406,7 +272,7 @@
               <item name="nettychat" type="462c0819:PsiDirectoryNode" />
               <item name="netty-chat-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -444,7 +310,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ByteBufTest">
+  <component name="RunManager" selected="Application.NettyServer">
     <configuration name="ByteBufTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.learning.server.ByteBufTest" />
       <module name="netty-chat-server" />
@@ -486,9 +352,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ByteBufTest" />
         <item itemvalue="Application.NettyClient" />
         <item itemvalue="Application.NettyServer" />
+        <item itemvalue="Application.ByteBufTest" />
       </list>
     </recent_temporary>
   </component>
@@ -502,12 +368,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548912246939</updated>
-      <workItem from="1548912253233" duration="11814000" />
+      <workItem from="1548912253233" duration="13834000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1549005060629</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549005060629</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11814000" />
+    <option name="totallyTimeSpent" value="13834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -522,7 +396,7 @@
       <window_info anchor="bottom" id="Debug with VisualVM" />
       <window_info anchor="bottom" id="SonarLint" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" weight="0.329429" />
       <window_info anchor="bottom" id="Messages" weight="0.329429" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -530,7 +404,7 @@
       <window_info anchor="bottom" id="FindBugs-IDEA" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.121522695" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41434845" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -547,6 +421,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
@@ -562,18 +440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/netty-chat-common/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -691,22 +557,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxyHandler.java">
+    <entry file="file://$PROJECT_DIR$/netty-chat-common/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="228">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/InboundProxyGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/OutboundProxyGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/DynamicProxyHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/NettyServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
+        <state relative-caret-position="456">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2031#2322#0" expanded="true" />
@@ -717,13 +623,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/proxy/InboundProxyGenerator.java">
+    <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/codec/PacketDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="41" />
+        <state relative-caret-position="320">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-chat-server/src/main/java/com/ethan/server/codec/PacketEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/netty-chat-common/src/main/java/com/ethan/protocol/command/PacketCodeC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
         </state>
       </provider>
     </entry>
