@@ -1,4 +1,4 @@
-package com.ethan.server.codec;
+package com.ethan.codec;
 
 import com.ethan.protocol.command.Packet;
 import com.ethan.protocol.command.PacketCodeC;
@@ -13,6 +13,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 public class PacketEncoder extends MessageToByteEncoder<Packet> {
     @Override
     protected void encode(ChannelHandlerContext ctx, Packet msg, ByteBuf out) throws Exception {
-        PacketCodeC.INSTANCE.encode(out.alloc(), msg);
+        System.out.println("PacketEncoder-->");
+        PacketCodeC.INSTANCE.encode(out, msg);
     }
 }

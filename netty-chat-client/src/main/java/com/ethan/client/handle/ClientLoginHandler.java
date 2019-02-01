@@ -21,6 +21,7 @@ import java.util.UUID;
  */
 public class ClientLoginHandler extends ChannelInboundHandlerAdapter {
     @Override
+    @SuppressWarnings("Duplicates")
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("start login to server:-->" + LocalDateUtil.getNowDateTimeStr());
 

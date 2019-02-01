@@ -43,6 +43,15 @@ public class PacketCodeC {
         INSTANCE = Singleton.INSTANCE.getPacketCodeC();
     }
 
+    /**
+     * previous version
+     * @param byteBufAllocator
+     * @param packet
+     * @return
+     * @date 01/02/2019 4:49 PM
+     */
+    @Deprecated
+    @SuppressWarnings("Duplicates")
     public ByteBuf encode(ByteBufAllocator byteBufAllocator, Packet packet) {
         // 1. create ByteBuf
         // ioBuffer() 方法会返回适配 io 读写相关的内存，它会尽可能创建一个直接内存，直接内存可以理解为不受 jvm 堆管理的内存空间，写到 IO 缓冲区的效果更高
@@ -61,7 +70,30 @@ public class PacketCodeC {
         return byteBuf;
     }
 
+    /**
+     * new version
+     *
+     * @return
+     * @param:
+     * @date 01/02/2019 4:50 PM
+     */
+    @SuppressWarnings("Duplicates")
+    public void encode(ByteBuf byteBuf, Packet packet) {
+        // 1. serializer Java Object
+        byte[] bytes = Serializer.DEFAULT.serialize(packet);
+
+        // 2. reality transfer data
+        byteBuf.writeInt(MAGIC_NUMBER);
+        byteBuf.writeByte(packet.getVersion());
+        byteBuf.writeByte(Serializer.DEFAULT.getSerializerAlgorithm());
+        byteBuf.writeByte(packet.getCommand());
+        byteBuf.writeInt(bytes.length);
+        byteBuf.writeBytes(bytes);
+    }
+
     public Packet decode(ByteBuf byteBuf) {
+        // TODO 此处需要释放内存???????
+
         // skip magic number
         byteBuf.skipBytes(4);
         // skip version

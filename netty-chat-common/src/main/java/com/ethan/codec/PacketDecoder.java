@@ -1,4 +1,4 @@
-package com.ethan.server.codec;
+package com.ethan.codec;
 
 import com.ethan.protocol.command.PacketCodeC;
 import io.netty.buffer.ByteBuf;
@@ -14,6 +14,7 @@ import java.util.List;
 public class PacketDecoder extends ByteToMessageDecoder {
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+        System.out.println("PacketDecoder-->");
         out.add(PacketCodeC.INSTANCE.decode(in));
     }
 }

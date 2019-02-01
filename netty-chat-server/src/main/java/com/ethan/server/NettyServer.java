@@ -1,8 +1,12 @@
 package com.ethan.server;
 
+import com.ethan.codec.PacketDecoder;
+import com.ethan.codec.PacketEncoder;
 import com.ethan.server.handle.InBoundHandlerA;
 import com.ethan.server.handle.InBoundHandlerB;
 import com.ethan.server.handle.InBoundHandlerC;
+import com.ethan.server.handle.LoginRequestHandler;
+import com.ethan.server.handle.MessageRequestHandler;
 import com.ethan.server.handle.OutBoundHandlerA;
 import com.ethan.server.handle.OutBoundHandlerB;
 import com.ethan.server.handle.OutBoundHandlerC;
@@ -44,20 +48,27 @@ public class NettyServer {
                     @Override
                     protected void initChannel(NioSocketChannel channel) throws Exception {
                         System.out.println("initChannel():--> child worker启动..." );
+                        channel.pipeline().addLast(new PacketDecoder());
+                        channel.pipeline().addLast(new LoginRequestHandler());
+                        channel.pipeline().addLast(new MessageRequestHandler());
+                        channel.pipeline().addLast(new PacketEncoder());
+
+
+                        // -------------------------------------package------------------------------------------------------
                         // channel.pipeline().addLast(new InBoundHandlerStaticProxy(new InBoundHandlerA()));
                         // channel.pipeline().addLast(new InBoundHandlerStaticProxy(new InBoundHandlerB()));
                         // channel.pipeline().addLast(new InBoundHandlerStaticProxy(new InBoundHandlerC()));
-                        channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerA()));
-                        channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerB()));
-                        channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerC()));
-                        channel.pipeline().addLast(new ServerLoginHandler());
+                        // channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerA()));
+                        // channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerB()));
+                        // channel.pipeline().addLast(InboundProxyGenerator.newInstance(new InBoundHandlerC()));
+                        // channel.pipeline().addLast(new ServerLoginHandler());
 
                         // channel.pipeline().addLast(new OutBoundHandlerStaticProxy(new OutBoundHandlerA()));
                         // channel.pipeline().addLast(new OutBoundHandlerStaticProxy(new OutBoundHandlerB()));
                         // channel.pipeline().addLast(new OutBoundHandlerStaticProxy(new OutBoundHandlerC()));
-                        channel.pipeline().addLast(OutboundProxyGenerator.newInstance(new OutBoundHandlerA()));
-                        channel.pipeline().addLast(new OutBoundHandlerB());
-                        channel.pipeline().addLast(new OutBoundHandlerC());
+                        // channel.pipeline().addLast(OutboundProxyGenerator.newInstance(new OutBoundHandlerA()));
+                        // channel.pipeline().addLast(new OutBoundHandlerB());
+                        // channel.pipeline().addLast(new OutBoundHandlerC());
                     }
                 });
         bind(serverBootstrap, 8080);

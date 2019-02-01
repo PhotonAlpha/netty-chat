@@ -1,5 +1,8 @@
-# Created by .ignore support plugin (hsz.mobi)
-/.idea/
-/netty-chat-client/target/
-/netty-chat-server/target/
-/netty-chat-common/target/
+
+\.idea/
+
+netty-chat-client/target/
+
+netty-chat-common/target/
+
+netty-chat-server/target/

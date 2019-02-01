@@ -2,6 +2,10 @@ package com.ethan.client;
 
 import com.ethan.client.handle.ClientLoginHandler;
 import com.ethan.client.handle.FirstClientHandler;
+import com.ethan.client.handle.LoginResponseHandler;
+import com.ethan.client.handle.MessageResponseHandler;
+import com.ethan.codec.PacketDecoder;
+import com.ethan.codec.PacketEncoder;
 import com.ethan.protocol.command.PacketCodeC;
 import com.ethan.request.MessageRequestPacket;
 import com.ethan.utils.LoginUtil;
@@ -43,8 +47,13 @@ public class NettyClient {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
                         System.out.println("initChannel():-->client 启动...");
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new PacketEncoder());
+                        // -----------old version----------------------
                         // specify the read and write data
-                        ch.pipeline().addLast(new ClientLoginHandler());
+                        // ch.pipeline().addLast(new ClientLoginHandler());
                     }
                 });
         connect(bootstrap, "127.0.0.1", 8080, MAX_RETRY);
