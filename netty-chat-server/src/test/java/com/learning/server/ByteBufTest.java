@@ -18,6 +18,11 @@ package com.learning.server;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @author tmpil9
  * @version 1.0
@@ -80,7 +85,12 @@ public class ByteBufTest {
         // getByte(3) return: 4
         // getShort(3) return: 1024
         // getInt(3) return: 67108864
-        main1();
+        // main1();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date1 = LocalDate.parse("2019-02-01", dtf);
+        LocalDate date2 = LocalDate.parse("2018-08-01", dtf);
+        long result = Duration.between(date1.atStartOfDay(), date2.atStartOfDay()).toDays();
+        System.out.println("main():-->" +result);
     }
 
     //byte 数组与 int 的相互转换
@@ -100,4 +110,6 @@ public class ByteBufTest {
         };
 
     }
+
+
 }

@@ -1,13 +1,0 @@
-
-[
-squid:S106K"9Replace this use of System.out or System.err by a logger.(‹™¦“øÿÿÿÿ8õÔ”Ð‡-
-nsquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(ŠÁ½³úÿÿÿÿ8üó­Ë‡-
-esquid:UselessImportCheck"5Remove this unused import 'java.nio.charset.Charset'.(ü¶ØŸýÿÿÿÿ8„«ÓÊ‡-
-[
-squid:S106)"9Replace this use of System.out or System.err by a logger.(¸‰¯òüÿÿÿÿ8›ºæ¤‡-
-[
-squid:S106G"9Replace this use of System.out or System.err by a logger.(Þ“Ìþÿÿÿÿ8íé¿Ê‡-
-V
-squid:S106D"9Replace this use of System.out or System.err by a logger.(´þ¦ì8òù¹Ê‡-
-[
-squid:S106@"9Replace this use of System.out or System.err by a logger.(ÇÔƒùÿÿÿÿ8­­ÑÊ‡-
