@@ -1,16 +1,15 @@
 package com.ethan.client;
 
-import com.ethan.client.handle.ClientLoginHandler;
-import com.ethan.client.handle.FirstClientHandler;
 import com.ethan.client.handle.LoginResponseHandler;
+import com.ethan.client.handle.LoginResponseHandler_Old;
 import com.ethan.client.handle.MessageResponseHandler;
 import com.ethan.codec.PacketDecoder;
 import com.ethan.codec.PacketEncoder;
-import com.ethan.protocol.command.PacketCodeC;
+import com.ethan.codec.Spliter;
+import com.ethan.request.LoginRequestPacket;
 import com.ethan.request.MessageRequestPacket;
-import com.ethan.utils.LoginUtil;
+import com.ethan.utils.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -47,6 +46,8 @@ public class NettyClient {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
                         System.out.println("initChannel():-->client 启动...");
+                        ch.pipeline().addLast(new Spliter());
+                        // ch.pipeline().addLast(new FirstClientHandler());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
@@ -82,20 +83,46 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter("\n");
+        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
         new Thread(() -> {
             while (!Thread.interrupted()) {
-                System.out.println("haslogin:" + LoginUtil.hasLogin(channel));
-                if (LoginUtil.hasLogin(channel)) {
-                    System.out.println("Send message to server.");
-                    Scanner scanner = new Scanner(System.in);
-                    String line = scanner.nextLine();
+                // System.out.println("haslogin:" + LoginUtil.hasLogin(channel));
+                // if (LoginUtil.hasLogin(channel)) {
+                if (!SessionUtil.hasLogin(channel)) {
+                    System.out.print("请输入用户名:");
+                    String username = scanner.nextLine();
+                    loginRequestPacket.setUsername(username);
 
-                    MessageRequestPacket packet = new MessageRequestPacket();
-                    packet.setMessage(line);
+                    // 密码使用默认的
+                    loginRequestPacket.setPassword("pwd");
+                    //发送数据包
+                    channel.writeAndFlush(loginRequestPacket);
+                    waitForLoginResponse();
+                    /*for (int i = 0; i < 1000; i++) {
+                        channel.writeAndFlush(new MessageRequestPacket(i+":"+line));
+                    }*/
+
+                    /*MessageRequestPacket packet = new MessageRequestPacket(line);
                     ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc(), packet);
-                    channel.writeAndFlush(byteBuf);
+                    channel.writeAndFlush(new MessageRequestPacket(line));*/
+                } else {
+                    System.out.print("请输入用户ID:");
+                    String toUserId = scanner.next();
+                    System.out.print("请输入信息:");
+                    String message = scanner.next();
+                    channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
                 }
             }
         }).start();
+    }
+
+    private static void waitForLoginResponse() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

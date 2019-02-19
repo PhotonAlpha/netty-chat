@@ -22,7 +22,7 @@ import static com.ethan.protocol.command.Command.MESSAGE_RESPONSE;
  * @date 22/01/2019
  */
 public class PacketCodeC {
-    private static final int MAGIC_NUMBER = 0x12345678;
+    public static final int MAGIC_NUMBER = 0x12345678;
 
     public static final PacketCodeC INSTANCE;
 

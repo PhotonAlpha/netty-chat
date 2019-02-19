@@ -13,6 +13,11 @@ import static com.ethan.protocol.command.Command.LOGIN_RESPONSE;
 @Data
 @ToString
 public class LoginResponsePacket extends Packet {
+
+    private String userId;
+
+    private String userName;
+
     private boolean success;
 
     private String reason;

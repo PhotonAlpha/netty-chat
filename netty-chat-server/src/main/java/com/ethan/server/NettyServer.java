@@ -2,17 +2,11 @@ package com.ethan.server;
 
 import com.ethan.codec.PacketDecoder;
 import com.ethan.codec.PacketEncoder;
-import com.ethan.server.handle.InBoundHandlerA;
-import com.ethan.server.handle.InBoundHandlerB;
-import com.ethan.server.handle.InBoundHandlerC;
+import com.ethan.codec.Spliter;
+import com.ethan.server.handle.AuthHandler;
 import com.ethan.server.handle.LoginRequestHandler;
 import com.ethan.server.handle.MessageRequestHandler;
-import com.ethan.server.handle.OutBoundHandlerA;
-import com.ethan.server.handle.OutBoundHandlerB;
-import com.ethan.server.handle.OutBoundHandlerC;
-import com.ethan.server.handle.ServerLoginHandler;
-import com.ethan.server.proxy.InboundProxyGenerator;
-import com.ethan.server.proxy.OutboundProxyGenerator;
+import com.ethan.server.handle.MessageRequestHandler_Old;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -48,8 +42,12 @@ public class NettyServer {
                     @Override
                     protected void initChannel(NioSocketChannel channel) throws Exception {
                         System.out.println("initChannel():--> child worker启动..." );
+                        // channel.pipeline().addLast(new LifeCyCleTestHandler());
+                        channel.pipeline().addLast(new Spliter());
+                        // channel.pipeline().addLast(new FirstServerHandler());
                         channel.pipeline().addLast(new PacketDecoder());
                         channel.pipeline().addLast(new LoginRequestHandler());
+                        channel.pipeline().addLast(new AuthHandler());
                         channel.pipeline().addLast(new MessageRequestHandler());
                         channel.pipeline().addLast(new PacketEncoder());
 

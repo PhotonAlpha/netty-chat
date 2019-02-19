@@ -17,9 +17,16 @@ public class FirstClientHandler extends ChannelInboundHandlerAdapter {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("client write out data:-->" + new Date());
         // 1. fetch data
-        ByteBuf buffer = getByteBuf(ctx);
+        // ByteBuf buffer = getByteBuf(ctx);
         // 2. write data
-        ctx.channel().writeAndFlush(buffer);
+        // ctx.channel().writeAndFlush(buffer);
+
+
+        for (int i = 0; i < 1000; i++) {
+            ByteBuf buffer = getByteBuf(ctx);
+            ctx.channel().writeAndFlush(buffer);
+
+        }
     }
 
     @Override

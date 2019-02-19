@@ -1,18 +1,21 @@
 package com.ethan.client.handle;
 
+import com.ethan.protocol.command.PacketCodeC;
+import com.ethan.request.LoginRequestPacket;
 import com.ethan.response.LoginResponsePacket;
-import com.ethan.session.Session;
 import com.ethan.utils.LocalDateUtil;
 import com.ethan.utils.LoginUtil;
-import com.ethan.utils.SessionUtil;
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+
+import java.util.UUID;
 
 /**
  * @version 1.0
  * @date 01/02/2019
  */
-public class LoginResponseHandler extends SimpleChannelInboundHandler<LoginResponsePacket> {
+public class LoginResponseHandler_Old extends SimpleChannelInboundHandler<LoginResponsePacket> {
     @Override
     @SuppressWarnings("Duplicates")
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -34,12 +37,9 @@ public class LoginResponseHandler extends SimpleChannelInboundHandler<LoginRespo
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginResponsePacket loginResponsePacket) throws Exception {
-        String userId = loginResponsePacket.getUserId();
-        String userName = loginResponsePacket.getUserName();
-
         if (loginResponsePacket.isSuccess()) {
-            System.out.println("[" + userName + "]登录成功，你的userId 为: " + userId);
-            SessionUtil.bindSession(new Session(userId, userName), ctx.channel());
+            System.out.println(LocalDateUtil.getNowDateTimeStr() + " login successful!");
+            LoginUtil.markAsLogin(ctx.channel());
         } else {
             System.out.println("login failed!" + loginResponsePacket.getReason());
         }
