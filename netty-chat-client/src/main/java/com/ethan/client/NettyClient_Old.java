@@ -89,9 +89,6 @@ public class NettyClient_Old {
         scanner.useDelimiter("\n");
         LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
 
-        ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
-        LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
-
         new Thread(() -> {
             while (!Thread.interrupted()) {
                 // System.out.println("haslogin:" + LoginUtil.hasLogin(channel));

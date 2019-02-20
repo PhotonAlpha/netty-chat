@@ -14,6 +14,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * @date 19/02/2019
  */
 public class SessionUtil {
+    private SessionUtil() {
+    }
+
     private static final Map<String, Channel> userIdChannelMap = new ConcurrentHashMap<>();
 
     private static final Map<String, ChannelGroup> groupIdChannelGroupMap = new ConcurrentHashMap<>();

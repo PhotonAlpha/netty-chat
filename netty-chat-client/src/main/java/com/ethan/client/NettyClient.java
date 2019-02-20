@@ -100,13 +100,13 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter("\n");
 
         ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
         LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
 
         new Thread(() -> {
+            Scanner scanner = new Scanner(System.in);
+            scanner.useDelimiter("\n");
             while (!Thread.interrupted()) {
                 if (!SessionUtil.hasLogin(channel)) {
                     loginConsoleCommand.exec(scanner, channel);
