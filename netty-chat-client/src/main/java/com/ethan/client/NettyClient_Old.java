@@ -2,14 +2,8 @@ package com.ethan.client;
 
 import com.ethan.client.console.ConsoleCommandManager;
 import com.ethan.client.console.LoginConsoleCommand;
-import com.ethan.client.handle.CreateGroupResponseHandler;
-import com.ethan.client.handle.JoinGroupResponseHandler;
-import com.ethan.client.handle.ListGroupMembersResponseHandler;
 import com.ethan.client.handle.LoginResponseHandler;
-import com.ethan.client.handle.LoginResponseHandler_Old;
-import com.ethan.client.handle.LogoutResponseHandler;
 import com.ethan.client.handle.MessageResponseHandler;
-import com.ethan.client.handle.QuitGroupResponseHandler;
 import com.ethan.codec.PacketDecoder;
 import com.ethan.codec.PacketEncoder;
 import com.ethan.codec.Spliter;
@@ -34,10 +28,9 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  * @date 16/01/2019
  */
-public class NettyClient {
+public class NettyClient_Old {
     private static final int MAX_RETRY = 5;
 
-    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
 
@@ -59,12 +52,7 @@ public class NettyClient {
                         // ch.pipeline().addLast(new FirstClientHandler());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
-                        ch.pipeline().addLast(new LogoutResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
-                        ch.pipeline().addLast(new CreateGroupResponseHandler());
-                        ch.pipeline().addLast(new JoinGroupResponseHandler());
-                        ch.pipeline().addLast(new QuitGroupResponseHandler());
-                        ch.pipeline().addLast(new ListGroupMembersResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                         // -----------old version----------------------
                         // specify the read and write data
@@ -78,7 +66,6 @@ public class NettyClient {
      * @description: try to reconnect with time, 1, 2, 4, 8, 16...
      * @date 18/01/2019 11:05 AM
      */
-    @SuppressWarnings("Duplicates")
     private static void connect(Bootstrap bootstrap, String host, int port, int retry) {
         bootstrap.connect(host, port).addListener(future -> {
             if (future.isSuccess()) {
@@ -100,16 +87,38 @@ public class NettyClient {
     private static void startConsoleThread(Channel channel) {
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
+        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
 
         ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
         LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
 
         new Thread(() -> {
             while (!Thread.interrupted()) {
+                // System.out.println("haslogin:" + LoginUtil.hasLogin(channel));
+                // if (LoginUtil.hasLogin(channel)) {
                 if (!SessionUtil.hasLogin(channel)) {
-                    loginConsoleCommand.exec(scanner, channel);
+                    System.out.print("请输入用户名:");
+                    String username = scanner.nextLine();
+                    loginRequestPacket.setUsername(username);
+
+                    // 密码使用默认的
+                    loginRequestPacket.setPassword("pwd");
+                    //发送数据包
+                    channel.writeAndFlush(loginRequestPacket);
+                    waitForLoginResponse();
+                    /*for (int i = 0; i < 1000; i++) {
+                        channel.writeAndFlush(new MessageRequestPacket(i+":"+line));
+                    }*/
+
+                    /*MessageRequestPacket packet = new MessageRequestPacket(line);
+                    ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc(), packet);
+                    channel.writeAndFlush(new MessageRequestPacket(line));*/
                 } else {
-                    consoleCommandManager.exec(scanner, channel);
+                    System.out.print("请输入用户ID:");
+                    String toUserId = scanner.next();
+                    System.out.print("请输入信息:");
+                    String message = scanner.next();
+                    channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
                 }
             }
         }).start();

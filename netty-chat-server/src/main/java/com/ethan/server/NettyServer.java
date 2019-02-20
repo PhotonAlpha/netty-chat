@@ -4,9 +4,14 @@ import com.ethan.codec.PacketDecoder;
 import com.ethan.codec.PacketEncoder;
 import com.ethan.codec.Spliter;
 import com.ethan.server.handle.AuthHandler;
+import com.ethan.server.handle.CreateGroupRequestHandler;
+import com.ethan.server.handle.JoinGroupRequestHandler;
+import com.ethan.server.handle.ListGroupMembersRequestHandler;
 import com.ethan.server.handle.LoginRequestHandler;
+import com.ethan.server.handle.LogoutRequestHandler;
 import com.ethan.server.handle.MessageRequestHandler;
 import com.ethan.server.handle.MessageRequestHandler_Old;
+import com.ethan.server.handle.QuitGroupRequestHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -47,8 +52,13 @@ public class NettyServer {
                         // channel.pipeline().addLast(new FirstServerHandler());
                         channel.pipeline().addLast(new PacketDecoder());
                         channel.pipeline().addLast(new LoginRequestHandler());
+                        channel.pipeline().addLast(new LogoutRequestHandler());
                         channel.pipeline().addLast(new AuthHandler());
                         channel.pipeline().addLast(new MessageRequestHandler());
+                        channel.pipeline().addLast(new CreateGroupRequestHandler());
+                        channel.pipeline().addLast(new JoinGroupRequestHandler());
+                        channel.pipeline().addLast(new QuitGroupRequestHandler());
+                        channel.pipeline().addLast(new ListGroupMembersRequestHandler());
                         channel.pipeline().addLast(new PacketEncoder());
 
 

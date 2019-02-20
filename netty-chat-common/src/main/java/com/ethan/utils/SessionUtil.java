@@ -3,8 +3,10 @@ package com.ethan.utils;
 import com.ethan.attribute.Attributes;
 import com.ethan.session.Session;
 import io.netty.channel.Channel;
+import io.netty.channel.group.ChannelGroup;
 
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -12,16 +14,18 @@ import java.util.concurrent.ConcurrentHashMap;
  * @date 19/02/2019
  */
 public class SessionUtil {
-    private static final Map<String, Channel> userIdChannel = new ConcurrentHashMap<>();
+    private static final Map<String, Channel> userIdChannelMap = new ConcurrentHashMap<>();
+
+    private static final Map<String, ChannelGroup> groupIdChannelGroupMap = new ConcurrentHashMap<>();
 
     public static void bindSession(Session session, Channel channel) {
-        userIdChannel.put(session.getUserId(), channel);
+        userIdChannelMap.put(session.getUserId(), channel);
         channel.attr(Attributes.SESSION).set(session);
     }
 
     public static void unBindSession(Channel channel) {
         if (hasLogin(channel)) {
-            userIdChannel.remove(getSession(channel).getUserId());
+            userIdChannelMap.remove(getSession(channel).getUserId());
             channel.attr(Attributes.SESSION).set(null);
         }
     }
@@ -35,6 +39,17 @@ public class SessionUtil {
     }
 
     public static Channel getChannel(String userId) {
-        return userIdChannel.get(userId);
+        return userIdChannelMap.get(userId);
+    }
+
+    public static String randomId() {
+        return UUID.randomUUID().toString().split("-")[0];
+    }
+
+    public static void bindChannelGroup(String groupId, ChannelGroup channelGroup) {
+        groupIdChannelGroupMap.put(groupId, channelGroup);
+    }
+    public static ChannelGroup getChannelGroup(String groupId) {
+        return groupIdChannelGroupMap.get(groupId);
     }
 }

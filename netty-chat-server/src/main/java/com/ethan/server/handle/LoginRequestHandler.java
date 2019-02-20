@@ -27,7 +27,7 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
 
         if (valid(loginRequest)) {
             loginResponsePacket.setSuccess(true);
-            loginResponsePacket.setUserId(randomUserId());
+            loginResponsePacket.setUserId(SessionUtil.randomId());
             System.out.println(loginResponsePacket);
             System.out.println("[" + loginRequest.getUsername() + "]登录成功");
 
@@ -51,13 +51,10 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
         return false;
     }
 
-    private static String randomUserId() {
-        return UUID.randomUUID().toString().split("-")[0];
-    }
-
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        System.err.println("LoginRequestHandler channel 被关闭：channelInactive()");
+        final String username = SessionUtil.getSession(ctx.channel()).getUserName();
+        System.err.println("LoginRequestHandler channel 被关闭：channelInactive() 用户:"+username+"下线");
         SessionUtil.unBindSession(ctx.channel());
     }
 }
