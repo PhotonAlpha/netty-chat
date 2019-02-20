@@ -3,6 +3,7 @@ package com.ethan.client;
 import com.ethan.client.console.ConsoleCommandManager;
 import com.ethan.client.console.LoginConsoleCommand;
 import com.ethan.client.handle.CreateGroupResponseHandler;
+import com.ethan.client.handle.GroupMessageResponseHandler;
 import com.ethan.client.handle.JoinGroupResponseHandler;
 import com.ethan.client.handle.ListGroupMembersResponseHandler;
 import com.ethan.client.handle.LoginResponseHandler;
@@ -65,6 +66,7 @@ public class NettyClient {
                         ch.pipeline().addLast(new JoinGroupResponseHandler());
                         ch.pipeline().addLast(new QuitGroupResponseHandler());
                         ch.pipeline().addLast(new ListGroupMembersResponseHandler());
+                        ch.pipeline().addLast(new GroupMessageResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                         // -----------old version----------------------
                         // specify the read and write data

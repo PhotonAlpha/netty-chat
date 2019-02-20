@@ -12,6 +12,11 @@ import io.netty.channel.group.ChannelGroup;
  * @date 20/02/2019
  */
 public class QuitGroupRequestHandler extends SimpleChannelInboundHandler<QuitGroupRequestPacket> {
+    public final static QuitGroupRequestHandler INSTANCE = new QuitGroupRequestHandler();
+
+    private QuitGroupRequestHandler() {
+    }
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, QuitGroupRequestPacket requestPacket) throws Exception {
         // 1. 获取群对应的 channelGroup，然后将当前用户的 channel 移除

@@ -1,7 +1,7 @@
 package com.ethan.server.handle;
 
-import com.ethan.utils.LoginUtil;
 import com.ethan.utils.SessionUtil;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -9,7 +9,12 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  * @version 1.0
  * @date 18/02/2019
  */
+@ChannelHandler.Sharable
 public class AuthHandler extends ChannelInboundHandlerAdapter {
+    public final static AuthHandler INSTANCE = new AuthHandler();
+
+    private AuthHandler() {
+    }
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("channel 绑定到线程(NioEventLoop)：channelRead()");

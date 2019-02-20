@@ -16,6 +16,11 @@ import java.util.stream.Collectors;
  * @date 20/02/2019
  */
 public class ListGroupMembersRequestHandler extends SimpleChannelInboundHandler<ListGroupMemberRequestPacket> {
+    public final static ListGroupMembersRequestHandler INSTANCE = new ListGroupMembersRequestHandler();
+
+    private ListGroupMembersRequestHandler() {
+    }
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, ListGroupMemberRequestPacket requestPacket) throws Exception {
         // 1. 获取群的 ChannelGroup

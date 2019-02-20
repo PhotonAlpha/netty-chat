@@ -5,6 +5,7 @@ import com.ethan.response.MessageResponsePacket;
 import com.ethan.session.Session;
 import com.ethan.utils.SessionUtil;
 import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -12,7 +13,12 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @version 1.0
  * @date 01/02/2019
  */
+// @ChannelHandler.Sharable
 public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRequestPacket> {
+    public final static MessageRequestHandler INSTANCE = new MessageRequestHandler();
+
+    private MessageRequestHandler() {
+    }
     @Override
     @SuppressWarnings("Duplicates")
     protected void channelRead0(ChannelHandlerContext ctx, MessageRequestPacket messageRequest) throws Exception {
@@ -34,7 +40,11 @@ public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRe
         // 4.将消息发送给消息接收方
         if (toUserChannel != null && SessionUtil.hasLogin(toUserChannel)) {
             messageResponse.setReceivable(true);
-            toUserChannel.writeAndFlush(messageResponse);
+            toUserChannel.writeAndFlush(messageResponse).addListener(future ->{
+                if (future.isDone()) {
+                    System.out.println("发送完毕");
+                }
+            });
 
             MessageResponsePacket userFeedback = new MessageResponsePacket();
             userFeedback.setMessage("发送成功!");
