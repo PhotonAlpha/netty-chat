@@ -2,6 +2,7 @@ package com.ethan.protocol.command;
 
 import com.ethan.request.CreateGroupRequestPacket;
 import com.ethan.request.GroupMessageRequestPacket;
+import com.ethan.request.HeartBeatRequestPacket;
 import com.ethan.request.JoinGroupRequestPacket;
 import com.ethan.request.ListGroupMemberRequestPacket;
 import com.ethan.request.LoginRequestPacket;
@@ -10,6 +11,7 @@ import com.ethan.request.MessageRequestPacket;
 import com.ethan.request.QuitGroupRequestPacket;
 import com.ethan.response.CreateGroupResponsePacket;
 import com.ethan.response.GroupMessageResponsePacket;
+import com.ethan.response.HeartBeatResponsePacket;
 import com.ethan.response.JoinGroupResponsePacket;
 import com.ethan.response.ListGroupMemberResponsePacket;
 import com.ethan.response.LoginResponsePacket;
@@ -57,6 +59,9 @@ public class PacketCodeC {
         packetTypeMap.put(QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
         packetTypeMap.put(GROUP_MESSAGE_REQUEST, GroupMessageRequestPacket.class);
         packetTypeMap.put(GROUP_MESSAGE_RESPONSE, GroupMessageResponsePacket.class);
+
+        packetTypeMap.put(HEARTBEAT_REQUEST, HeartBeatRequestPacket.class);
+        packetTypeMap.put(HEARTBEAT_RESPONSE, HeartBeatResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JsonSerializer();

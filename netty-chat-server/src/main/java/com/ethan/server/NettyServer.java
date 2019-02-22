@@ -5,6 +5,8 @@ import com.ethan.codec.PacketCodecHandler;
 import com.ethan.server.handle.AuthHandler;
 import com.ethan.server.handle.IMHandler;
 import com.ethan.server.handle.LoginRequestHandler;
+import com.ethan.server.handle.idle.HeartBeatRequestHandler;
+import com.ethan.idle.IMIdleStateHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -41,6 +43,9 @@ public class NettyServer {
                     protected void initChannel(NioSocketChannel channel) throws Exception {
                         System.out.println("initChannel():--> child worker启动..." );
                         // channel.pipeline().addLast(new LifeCyCleTestHandler());
+                        // 空闲检测
+                        channel.pipeline().addLast(new IMIdleStateHandler());
+
                         channel.pipeline().addLast(new Spliter());
                         // channel.pipeline().addLast(new FirstServerHandler());
                         // channel.pipeline().addLast(new PacketDecoder());
@@ -48,7 +53,8 @@ public class NettyServer {
 
                         // channel.pipeline().addLast(new LoginRequestHandler());
                         channel.pipeline().addLast(LoginRequestHandler.INSTANCE);
-
+                        // check heart beat
+                        channel.pipeline().addLast(HeartBeatRequestHandler.INSTANCE);
                         channel.pipeline().addLast(AuthHandler.INSTANCE);
 
                         channel.pipeline().addLast(IMHandler.INSTANCE);

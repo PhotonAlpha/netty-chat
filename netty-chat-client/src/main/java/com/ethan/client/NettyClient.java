@@ -4,6 +4,7 @@ import com.ethan.client.console.ConsoleCommandManager;
 import com.ethan.client.console.LoginConsoleCommand;
 import com.ethan.client.handle.CreateGroupResponseHandler;
 import com.ethan.client.handle.GroupMessageResponseHandler;
+import com.ethan.client.handle.HeartBeatTimerHandler;
 import com.ethan.client.handle.JoinGroupResponseHandler;
 import com.ethan.client.handle.ListGroupMembersResponseHandler;
 import com.ethan.client.handle.LoginResponseHandler;
@@ -14,8 +15,7 @@ import com.ethan.client.handle.QuitGroupResponseHandler;
 import com.ethan.codec.PacketDecoder;
 import com.ethan.codec.PacketEncoder;
 import com.ethan.codec.Spliter;
-import com.ethan.request.LoginRequestPacket;
-import com.ethan.request.MessageRequestPacket;
+import com.ethan.idle.IMIdleStateHandler;
 import com.ethan.utils.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -55,11 +55,16 @@ public class NettyClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
+                        // 空闲检测
+                        ch.pipeline().addLast(new IMIdleStateHandler());
+
                         System.out.println("initChannel():-->client 启动...");
                         ch.pipeline().addLast(new Spliter());
+
                         // ch.pipeline().addLast(new FirstClientHandler());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
+
                         ch.pipeline().addLast(new LogoutResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
                         ch.pipeline().addLast(new CreateGroupResponseHandler());
@@ -67,7 +72,11 @@ public class NettyClient {
                         ch.pipeline().addLast(new QuitGroupResponseHandler());
                         ch.pipeline().addLast(new ListGroupMembersResponseHandler());
                         ch.pipeline().addLast(new GroupMessageResponseHandler());
+
                         ch.pipeline().addLast(new PacketEncoder());
+
+                        //  心跳定时器
+                        ch.pipeline().addLast(new HeartBeatTimerHandler());
                         // -----------old version----------------------
                         // specify the read and write data
                         // ch.pipeline().addLast(new ClientLoginHandler());
