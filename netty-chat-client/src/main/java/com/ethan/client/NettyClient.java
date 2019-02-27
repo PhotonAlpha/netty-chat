@@ -4,6 +4,7 @@ import com.ethan.client.console.ConsoleCommandManager;
 import com.ethan.client.console.LoginConsoleCommand;
 import com.ethan.client.handle.CreateGroupResponseHandler;
 import com.ethan.client.handle.GroupMessageResponseHandler;
+import com.ethan.client.handle.HeartBeatResponseHandler;
 import com.ethan.client.handle.HeartBeatTimerHandler;
 import com.ethan.client.handle.JoinGroupResponseHandler;
 import com.ethan.client.handle.ListGroupMembersResponseHandler;
@@ -72,6 +73,8 @@ public class NettyClient {
                         ch.pipeline().addLast(new QuitGroupResponseHandler());
                         ch.pipeline().addLast(new ListGroupMembersResponseHandler());
                         ch.pipeline().addLast(new GroupMessageResponseHandler());
+
+                        ch.pipeline().addLast(new HeartBeatResponseHandler());
 
                         ch.pipeline().addLast(new PacketEncoder());
 
