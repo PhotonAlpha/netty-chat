@@ -41,4 +41,10 @@ public class HeartBeatTimerHandler extends ChannelInboundHandlerAdapter {
             }
         }, HEARTBEAT_INTERVAL, TimeUnit.SECONDS);
     }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("HeartBeatTimerHandler 客户端连接被关闭!");
+        super.channelInactive(ctx);
+    }
 }

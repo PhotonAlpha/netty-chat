@@ -48,6 +48,10 @@ public class LoginResponseHandler extends SimpleChannelInboundHandler<LoginRespo
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("客户端连接被关闭!");
+        // SessionUtil.getUserIdChannelMap().size();
+        // SessionUtil.getGroupIdChannelGroupMap().size();
+        System.out.println("user length :" +SessionUtil.getUserIdChannelMap().size());
+        System.out.println("group length :" +SessionUtil.getGroupIdChannelGroupMap().size());
         super.channelInactive(ctx);
     }
 }

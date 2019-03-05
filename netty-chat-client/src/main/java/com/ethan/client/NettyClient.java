@@ -9,14 +9,13 @@ import com.ethan.client.handle.HeartBeatTimerHandler;
 import com.ethan.client.handle.JoinGroupResponseHandler;
 import com.ethan.client.handle.ListGroupMembersResponseHandler;
 import com.ethan.client.handle.LoginResponseHandler;
-import com.ethan.client.handle.LoginResponseHandler_Old;
 import com.ethan.client.handle.LogoutResponseHandler;
 import com.ethan.client.handle.MessageResponseHandler;
 import com.ethan.client.handle.QuitGroupResponseHandler;
 import com.ethan.codec.PacketDecoder;
 import com.ethan.codec.PacketEncoder;
 import com.ethan.codec.Spliter;
-import com.ethan.idle.IMIdleStateHandler;
+import com.ethan.idle.ClientIMIdleStateHandler;
 import com.ethan.utils.SessionUtil;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -57,7 +56,7 @@ public class NettyClient {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
                         // 空闲检测
-                        ch.pipeline().addLast(new IMIdleStateHandler());
+                        ch.pipeline().addLast(new ClientIMIdleStateHandler());
 
                         System.out.println("initChannel():-->client 启动...");
                         ch.pipeline().addLast(new Spliter());
